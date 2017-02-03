@@ -1,7 +1,12 @@
+'use strict';
+
 import webpack from 'webpack';
 
-module.exports = {
+export default {
   entry: './src/index',
+  output: {
+    filename: 'dist/index.js',
+  },
   module: {
     loaders: [
       {
@@ -10,9 +15,6 @@ module.exports = {
         exclude: /node_modules/
       }
     ]
-  },
-  output: {
-    filename: 'dist/index.js',
   },
   plugins: [
     new webpack.DefinePlugin({
