@@ -1,0 +1,31 @@
+{
+  "name": "json-api-parser",
+  "version": "1.0.0",
+  "description": "Normalizes json-api response object or transforms it back based on json-api specification",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --config webpack.config.babel.js",
+    "test": "test"
+  },
+  "keywords": [
+    "jsonapi",
+    "json-api",
+    "json",
+    "normalizer",
+    "denormalizer",
+    "redux",
+    "react"
+  ],
+  "author": "Zarko Selak <selak.zarko@icloud.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.22.2",
+    "babel-loader": "^6.2.10",
+    "babel-plugin-transform-object-rest-spread": "^6.22.0",
+    "babel-polyfill": "^6.22.0",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-register": "^6.22.0",
+    "webpack": "^2.2.1"
+  },
+  "dependencies": {}
+}
