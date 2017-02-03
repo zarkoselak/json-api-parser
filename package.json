@@ -1,11 +1,20 @@
 {
   "name": "json-api-parser",
   "version": "1.0.0",
-  "description": "Normalizes json-api response object or transforms it back based on json-api specification",
+  "description": "Normalizes json-api response object and denormalizes it based on json-api specification",
   "main": "index.js",
   "scripts": {
+    "start": "babel-node --presets es2015 index.js",
     "build": "webpack --config webpack.config.babel.js",
     "test": "test"
+  },
+  "homepage": "https://github.com/zarkoselak/json-api-parser",
+  "repository": {
+    "url": "https://github.com/zarkoselak/json-api-parser.git",
+    "type": "git"
+  },
+  "bugs": {
+    "url": "https://github.com/zarkoselak/json-api-parser/issues"
   },
   "keywords": [
     "jsonapi",
@@ -14,7 +23,9 @@
     "normalizer",
     "denormalizer",
     "redux",
-    "react"
+    "flux",
+    "react",
+    "api"
   ],
   "author": "Zarko Selak <selak.zarko@icloud.com>",
   "license": "MIT",
