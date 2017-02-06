@@ -11,7 +11,7 @@ export const normalize = (json) => {
   const resources = [...entities, ...includes];
 
   return flatten(resources);
-}
+};
 
 /**
  * Denormalizes object and transforms it back to json-api structure
@@ -20,7 +20,7 @@ export const normalize = (json) => {
  */
 export const denormalize = (json) => {
   return null;
-}
+};
 
 /**
  * Flatten relationships in entity
@@ -30,20 +30,22 @@ export const denormalize = (json) => {
 const flattenRelationships = (relationships) => {
   if(!relationships) return;
 
-  let normalized = {}
+  let normalized = {};
 
   Object.keys(relationships)
     .map((value, index) => Array.isArray(relationships[value].data) ? relationships[value].data : [relationships[value].data])
     .map((data) => {
-      const {type, id} = relation;
+      data.map((item, items, index) => {
+        const {type, id} = item;
 
-      if(!normalized[type]) normalized[type] = {};
+        if(!normalized[type]) normalized[type] = {};
 
-      normalized[type][id] = { id, type };
+        normalized[type][id] = { id, type };
+      });
     });
 
-  return normalized;
-}
+  return {relationships: normalized};
+};
 
 /**
  * Flatten all entities in json-api response
@@ -66,4 +68,4 @@ const flatten = (resources) => {
   });
 
   return normalized;
-}
+};
